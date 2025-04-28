@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    int a,b;
+    scanf("%d %d",&a,&b);
+    int mat[a][b];
+    for(int i=0;i<a;i++)
+    {
+        for(int j=0;j<b;j++)
+        {
+        scanf("%d",&mat[i][j]);
+        }
+    }
+    int k=0,l=0;
+    while(k<a&&l<b)
+     {
+         for(int i=l;i<b;i++)
+         {
+             printf("%d",mat[k][i]);
+         }
+         k++;
+         for(int i=k;i<a;i++)
+         {
+             printf("%d",mat[i][b-1]);
+         }
+         b--;
+         if(k<a)
+         {
+             for(int i=b-1;i>=l;i--)
+             {
+                 printf("%d",mat[a-1][i]);
+             }
+            a--;
+         }
+         if(l<b)
+         {
+             for(int i=a-1;i>=k;i--)
+             {
+                 printf("%d",mat[i][l]);
+             }
+             l++;
+         }
+     }
+    return 0;
+}
